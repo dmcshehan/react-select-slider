@@ -1,0 +1,26 @@
+.selectBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  color: #8b949d;
+}
+
+.selected {
+  background-color: #424ea6;
+  box-shadow: 2px 2px 20px rgba(66, 78, 166, 0.25);
+  span {
+    color: white !important;
+  }
+}

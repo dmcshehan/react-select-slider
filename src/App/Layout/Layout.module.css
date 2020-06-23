@@ -1,0 +1,8 @@
+.layout {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 25px;
+
+  min-height: 100vh;
+  border: 1px solid black;
+}
