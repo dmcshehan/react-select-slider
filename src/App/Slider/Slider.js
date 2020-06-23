@@ -3,7 +3,7 @@ import Slide from "./Slide/Slide";
 import SliderFooter from "./SliderFooter/SliderFooter";
 import styles from "./Slider.module.css";
 
-import sliderInfo from "../../Api/sliders.json";
+import sliderInfo from "../../api/sliders.json";
 
 const initialSelectedSlideOptions = {};
 
