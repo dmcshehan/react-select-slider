@@ -1,8 +1,13 @@
 .slider {
   display: flex;
   flex-direction: column;
-
-  height: calc(736px - 50px);
   justify-content: space-between;
-  align-items: center;
+
+  height: 651px;
+}
+
+@media screen and (max-width: 480px) {
+  .slider {
+    height: calc(100vh - 50px);
+  }
 }

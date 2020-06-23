@@ -31,7 +31,9 @@ export default function SliderFooter({
         toggleSlider={toggleSlider}
       />
       {showDone ? (
-        <Button type='link'>DONE</Button>
+        <Button type='link' color='primary'>
+          DONE
+        </Button>
       ) : (
         <Button
           type='link'
