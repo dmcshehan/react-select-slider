@@ -1,0 +1,25 @@
+.button {
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+
+  font-weight: 700;
+
+  outline: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+.primary {
+  background-color: #424ea6;
+}
+
+.outline {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.link {
+  border: none;
+}
