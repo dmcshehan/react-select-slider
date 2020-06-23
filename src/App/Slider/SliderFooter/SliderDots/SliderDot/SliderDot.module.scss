@@ -1,0 +1,15 @@
+@import "../../../../../scss/variables.scss";
+
+.sliderDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 3px;
+}
+
+.activeDot {
+  width: 10px;
+  height: 10px;
+  background-color: $primary;
+}

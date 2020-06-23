@@ -1,27 +1,51 @@
 import React, { useState } from "react";
-import MainFocus from "./Slides/MainFocus/MainFocus";
+import Slide from "./Slide/Slide";
+import SliderFooter from "./SliderFooter/SliderFooter";
+import styles from "./Slider.module.css";
 
-import focusesArr from "../../Api/focuses.json";
+import sliderInfo from "../../Api/sliders.json";
+
+const initialSelectedSlideOptions = {};
+
+sliderInfo.forEach((slider) => {
+  initialSelectedSlideOptions[slider._id] = null;
+});
 
 export default function index() {
-  const [selectedSlideValues, setSelectedSlideValues] = useState({
-    mainFocus: null,
-    anotherSlide: null, //another example slide like main focus
-  });
+  const [selectedSlideOptions, setSelectedSlideOptions] = useState(
+    initialSelectedSlideOptions
+  );
 
-  function onSelect(selected) {
-    setSelectedSlideValues({
-      ...selectedSlideValues,
-      [selected.slider]: selected._id,
+  const [currentSlide, setCurrentSlide] = useState(sliderInfo[0]._id);
+
+  function onSelect({ sliderId, optionId }) {
+    setSelectedSlideOptions({
+      ...selectedSlideOptions,
+      [sliderId]: optionId,
     });
   }
 
+  const slides = sliderInfo.map((slide) => (
+    <Slide
+      key={slide._id}
+      {...slide}
+      onSelect={onSelect}
+      selected={selectedSlideOptions[slide._id]}
+      isCurrentSlide={currentSlide === slide._id}
+    />
+  ));
+
+  function toggleSlider(slide) {
+    setCurrentSlide(slide);
+  }
+
   return (
-    <div>
-      <MainFocus
-        data={focusesArr}
-        selected={selectedSlideValues.mainFocus}
-        onSelect={onSelect}
+    <div className={styles.slider}>
+      {slides}
+      <SliderFooter
+        currentSlide={currentSlide}
+        sliderInfo={sliderInfo}
+        toggleSlider={toggleSlider}
       />
     </div>
   );
