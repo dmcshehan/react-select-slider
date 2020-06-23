@@ -5,11 +5,10 @@
 #### To Setup Local Development Environment
 
 1.  Clone the repo
-    - `git clone https://github.com/dmcshehan/react-select-slider`
+    - `git clone https://github.com/dmcshehan/react-select-slider` or
     - `git clone git@github.com:dmcshehan/react-select-slider.git`
 2.  Install dependencies
-    - `npm install` , `npm i`
+    - `npm install` or `npm i`
     - `yarn install`
 3.  Start development server
-    - `npm start`
-    - `yarn start`
+    - `npm start` or `yarn start`
