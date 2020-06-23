@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
   };
 
   return {
+    mode: isDevelopment ? "development" : "production",
     entry: "./src/index.js",
     output: {
       filename: "bundle.js",
