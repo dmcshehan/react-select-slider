@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
-  console.log(env, argv);
-
   const isDevelopment = argv.mode === "development";
 
   const CSSModuleLoader = {
@@ -71,6 +69,17 @@ module.exports = (env, argv) => {
               },
             },
             "sass-loader",
+          ],
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+              },
+            },
           ],
         },
       ],

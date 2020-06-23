@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./Button.module.scss";
 
-export default function Button({ children, type, ...props }) {
-  let className = "";
+export default function Button({ children, type, color, ...props }) {
+  let className = "",
+    colorClass = "";
+
   switch (type) {
-    case "primary":
-      className = styles.primary;
-      break;
     case "link":
       className = styles.link;
       break;
@@ -14,8 +13,19 @@ export default function Button({ children, type, ...props }) {
       className = styles.outline;
   }
 
+  switch (color) {
+    case "primary":
+      colorClass = styles.primary;
+      break;
+    default:
+      colorClass = "";
+  }
+
   return (
-    <button className={`${styles.button} ${className}`} {...props}>
+    <button
+      className={`${styles.button} ${className} ${colorClass}`}
+      {...props}
+    >
       {children}
     </button>
   );
